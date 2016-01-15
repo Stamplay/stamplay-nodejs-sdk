@@ -1,0 +1,23 @@
+{
+  "name": "stamplay",
+  "version": "1.0.0",
+  "homepage": "https://stamplay.com",
+  "private": false,
+  "description": "NodeJs SDK for Stamplay",
+ 	"scripts": {
+    "test": "make test-all"
+  },  
+  "author": "Stamplay <cristian.roselli@stamplay.com> (https://www.stamplay.com)",
+  "license": "MIT",
+   "keywords": [
+    "cloud",
+    "baas",
+    "api",
+    "hosting",
+    "stamplay"
+  ],
+  "main": "./lib",
+  "engines": {
+    "node": ">=0.12.0"
+  }
+}
