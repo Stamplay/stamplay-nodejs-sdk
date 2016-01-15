@@ -46,7 +46,49 @@ stamplay.Object('foo').save(data, function(error, result){
 })
 ```
 
+##Available components
+This NodeJS SDK expose the following components:
+ 
+* [User](#user)
+	* <code>save(data, [callback])</code>
+  * <code>get(data, [callback])</code>
+  * <code>remove(id, [callback])</code>
+  * <code>update(id, data, [callback] )</code>
+* [Object](#custom-object)
+	* <code>save(data, [callback])</code>
+	* <code>get(data, [callback])</code>
+	* <code>remove(id, [callback])</code>
+	* <code>update(id, data, [callback])</code>
+	* <code>patch(id, data, [callback])</code>
+	* <code>upVote(id, [callback])</code>
+	* <code>downVote(id, [callback])</code>
+	* <code>rate(id, rate, [callback])</code>
+	* <code>comment(id, text, [callback])</code>
+* [Code Block](#codeblock)
+	* <code>run(data, queryParams, [callback])</code> 
+* [Webhook](#webhook)
+	* <code>post(data, [callback])</code> 
+
+Also this components the sdk have some support objects to help you in common operation:
+
+* [Query](#query)
+	* <code>greaterThan(attr, value)</code> 
+	* <code>greaterThanOrEqual(attr, value)</code> 
+	* <code>lessThan(attr, value)</code> 
+	* <code>lessThanOrEqual(attr, value)</code>
+	* <code>pagination(page, per_page)</code>
+	* <code>between(attr, value1, value2)</code> 
+	* <code>equalTo(attr, value)</code> 
+	* <code>exists(attr)</code> 
+	* <code>notExists(attr)</code> 
+	* <code>sortAscending(attr)</code> 
+	* <code>sortDescending(attr)</code> 
+	* <code>or(query,..)</code> 
+	* <code>exec([callback])</code> 
+
+-------------------------------------------------------
+
 # One more thing
-Go to [API Reference](https://stamplay.com) and ENJOY!.
+Go to [Stamplay](https://stamplay.com) and ENJOY!.
 <img align="right" src="https://editor.stamplay.com/img/logo-robot-no-neck.png" height=60>
 
