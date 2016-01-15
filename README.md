@@ -12,8 +12,11 @@ This library  gives you access to the powerful Stamplay cloud platform from your
 <br>
 
 ##Getting Started
-This Module is available for download on NPM.
-```npm install stamplay```
+This module is available for download on NPM:
+
+```
+npm install stamplay
+```
 
 To get started: 
 ```javascript
