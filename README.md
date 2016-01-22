@@ -82,7 +82,11 @@ Also this components the sdk have some support objects to help you in common ope
 	* <code>exists(attr)</code> 
 	* <code>notExists(attr)</code> 
 	* <code>sortAscending(attr)</code> 
-	* <code>sortDescending(attr)</code> 
+	* <code>sortDescending(attr)</code>
+	* <code>populate()</code>
+	* <code>populateOwner()</code>
+	* <code>select(attr,...)</code>
+	* <code>regex(attr, regex, options)</code> 
 	* <code>or(query,..)</code> 
 	* <code>exec([callback])</code> 
 
