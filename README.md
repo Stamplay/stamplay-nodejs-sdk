@@ -88,7 +88,16 @@ Also this components the sdk have some support objects to help you in common ope
 
 -------------------------------------------------------
 
-# One more thing
-Go to [Stamplay](https://stamplay.com) and ENJOY!.
+
+## Contributing
+
+1. Fork it ( https://github.com/[my-github-username]/stamplay-nodejs-sdk/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+## One more thing
+Go to [Stamplay](https://editor.stamplay.com/login) and try it now for free!.
 <img align="right" src="https://editor.stamplay.com/img/logo-robot-no-neck.png" height=60>
 
