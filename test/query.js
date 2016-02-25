@@ -1,13 +1,10 @@
 var stamplayQuery = require('../lib/query')
 var assert = require('assert')
 
-assert.throws(function(){
-	var query = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})()
-})
-assert.throws(function(){
-	var query = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('pippo')
-})
+assert.throws(function(){ var query = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})()})
+assert.throws(function(){ var query = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('pippo') })
 var query = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('user','instance')
+
 assert.equal(typeof query.base, 'undefined')
 assert.equal(typeof query.model, 'string')
 assert.equal(query.model, 'user')
@@ -42,42 +39,97 @@ assert.equal(typeof query.populateOwner, 'function')
 assert.equal(typeof query.regex, 'function')
 assert.equal(typeof query.select, 'function')
 assert.equal(typeof query.exec, 'function')
+
 query.pagination(1, 2)
 assert.equal(query.paginationQuery, '&page=1&per_page=2')
+
 query.pagination(2, 3)
 assert.equal(query.paginationQuery, '&page=2&per_page=3')
+
 query.between('value', 1, 2)
 assert.equal(query.whereQuery[0].value.$gte, 1)
 assert.equal(query.whereQuery[0].value.$lte, 2)
+
 query.greaterThan('value',1)
 assert.equal(query.whereQuery[1].value.$gt, 1)
+
 query.greaterThanOrEqual('value',3)
 assert.equal(query.whereQuery[2].value.$gte, 3)
+
 query.lessThan('value',4)
 assert.equal(query.whereQuery[3].value.$lt, 4)
+
 query.lessThanOrEqual('value',5)
 assert.equal(query.whereQuery[4].value.$lte, 5)
+
 query.equalTo('value','foo')
 assert.equal(query.whereQuery[5].value, 'foo')
+
 query.sortAscending('value')
 assert.equal(query.sortQuery, '&sort=value')
+
 query.sortDescending('value')
 assert.equal(query.sortQuery, '&sort=-value')
+
 query.populate()
 assert.equal(query.populateQuery, '&populate=true')
+
 query.populateOwner()
 assert.equal(query.populateOwnerQuery, '&populate_owner=true')
+
 query.select('a','b')
 assert.equal(query.selectionQuery, '&select=a,b')
+
 query.exists('value')
 assert.equal(query.whereQuery[6].value.$exists, true)
+
 query.notExists('value')
 assert.equal(query.whereQuery[7].value.$exists, false)
 assert.throws(function(){ query.or({}) })
 assert.throws(function(){ query.or({whereQuery:''},{}) })
+
 var q1 = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').equalTo('value','foo')
 var q2 = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').exists('value')
 query.or(q1,q2)
 assert.equal(query.whereQuery[8].$or[0].value, 'foo')
 assert.equal(query.whereQuery[8].$or[1].value.$exists, true)
-// exec
+
+var qnear = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').near('Point', [1,2], 1, 2)
+assert.equal(qnear.whereQuery[0]._geolocation.$near.$geometry.type, 'Point')
+assert.equal(qnear.whereQuery[0]._geolocation.$near.$geometry.coordinates[0], 1)
+assert.equal(qnear.whereQuery[0]._geolocation.$near.$geometry.coordinates[1], 2)
+assert.equal(qnear.whereQuery[0]._geolocation.$near.$maxDistance, 1)
+assert.equal(qnear.whereQuery[0]._geolocation.$near.$minDistance, 2)
+
+var qnearSphere = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').nearSphere('Point', [1,2], 1, 2)
+assert.equal(qnearSphere.whereQuery[0]._geolocation.$nearSphere.$geometry.type, 'Point')
+assert.equal(qnearSphere.whereQuery[0]._geolocation.$nearSphere.$geometry.coordinates[0], 1)
+assert.equal(qnearSphere.whereQuery[0]._geolocation.$nearSphere.$geometry.coordinates[1], 2)
+assert.equal(qnearSphere.whereQuery[0]._geolocation.$nearSphere.$maxDistance, 1)
+assert.equal(qnearSphere.whereQuery[0]._geolocation.$nearSphere.$minDistance, 2)
+
+var qgeoIntersects = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoIntersects('Point', [1,2])
+assert.equal(qgeoIntersects.whereQuery[0]._geolocation.$geoIntersects.$geometry.type, 'Point')
+assert.equal(qgeoIntersects.whereQuery[0]._geolocation.$geoIntersects.$geometry.coordinates[0], 1)
+assert.equal(qgeoIntersects.whereQuery[0]._geolocation.$geoIntersects.$geometry.coordinates[1], 2)
+
+var qgeoWithinGeometry = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinGeometry('Point', [1,2])
+assert.equal(qgeoWithinGeometry.whereQuery[0]._geolocation.$geoWithin.$geometry.type, 'Point')
+assert.equal(qgeoWithinGeometry.whereQuery[0]._geolocation.$geoWithin.$geometry.coordinates[0], 1)
+assert.equal(qgeoWithinGeometry.whereQuery[0]._geolocation.$geoWithin.$geometry.coordinates[1], 2)
+
+var qgeoWithinPolygon = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinPolygon([1,2])
+assert.equal(qgeoWithinPolygon.whereQuery[0]._geolocation.$geoWithin.$polygon[0], 1)
+assert.equal(qgeoWithinPolygon.whereQuery[0]._geolocation.$geoWithin.$polygon[1], 2)
+
+var qgeoWithinBox = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinBox([1,2])
+assert.equal(qgeoWithinBox.whereQuery[0]._geolocation.$geoWithin.$box[0], 1)
+assert.equal(qgeoWithinBox.whereQuery[0]._geolocation.$geoWithin.$box[1], 2)
+
+var qgeoWithinCenter = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinCenter([1,2])
+assert.equal(qgeoWithinCenter.whereQuery[0]._geolocation.$geoWithin.$center[0], 1)
+assert.equal(qgeoWithinCenter.whereQuery[0]._geolocation.$geoWithin.$center[1], 2)
+
+var qgeoWithinCenterSphere = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinCenterSphere([1,2])
+assert.equal(qgeoWithinCenterSphere.whereQuery[0]._geolocation.$geoWithin.$centerSphere[0], 1)
+assert.equal(qgeoWithinCenterSphere.whereQuery[0]._geolocation.$geoWithin.$centerSphere[1], 2)
