@@ -91,7 +91,7 @@ Also this components the sdk have some support objects to help you in common ope
 	* <code>nearSphere(type, coordinates, maxDistance, minDistance)</code>
 	* <code>geoIntersects(type, coordinates)</code>
 	* <code>geoWithinGeometry(type, coordinates)</code>
-	* <code>geoWithinCenterSphere(coordinates)</code> 
+	* <code>geoWithinCenterSphere(coordinates, radius)</code> 
 	* <code>or(query,..)</code> 
 	* <code>exec([callback])</code> 
 
