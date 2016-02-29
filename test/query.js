@@ -118,18 +118,8 @@ assert.equal(qgeoWithinGeometry.whereQuery[0]._geolocation.$geoWithin.$geometry.
 assert.equal(qgeoWithinGeometry.whereQuery[0]._geolocation.$geoWithin.$geometry.coordinates[0], 1)
 assert.equal(qgeoWithinGeometry.whereQuery[0]._geolocation.$geoWithin.$geometry.coordinates[1], 2)
 
-var qgeoWithinPolygon = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinPolygon([1,2])
-assert.equal(qgeoWithinPolygon.whereQuery[0]._geolocation.$geoWithin.$polygon[0], 1)
-assert.equal(qgeoWithinPolygon.whereQuery[0]._geolocation.$geoWithin.$polygon[1], 2)
-
-var qgeoWithinBox = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinBox([1,2])
-assert.equal(qgeoWithinBox.whereQuery[0]._geolocation.$geoWithin.$box[0], 1)
-assert.equal(qgeoWithinBox.whereQuery[0]._geolocation.$geoWithin.$box[1], 2)
-
-var qgeoWithinCenter = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinCenter([1,2])
-assert.equal(qgeoWithinCenter.whereQuery[0]._geolocation.$geoWithin.$center[0], 1)
-assert.equal(qgeoWithinCenter.whereQuery[0]._geolocation.$geoWithin.$center[1], 2)
-
-var qgeoWithinCenterSphere = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinCenterSphere([1,2])
-assert.equal(qgeoWithinCenterSphere.whereQuery[0]._geolocation.$geoWithin.$centerSphere[0], 1)
+var qgeoWithinCenterSphere = stamplayQuery({apiKey:'apiKey',appId:'appId', version:'v1'})('object','instance').geoWithinCenterSphere([1,2],2)
+assert.equal(qgeoWithinCenterSphere.whereQuery[0]._geolocation.$geoWithin.$centerSphere[0][0], 1)
+assert.equal(qgeoWithinCenterSphere.whereQuery[0]._geolocation.$geoWithin.$centerSphere[0][1], 2)
 assert.equal(qgeoWithinCenterSphere.whereQuery[0]._geolocation.$geoWithin.$centerSphere[1], 2)
+
