@@ -9,6 +9,8 @@ test-components:
 	node test/webhook.js
 	node test/codeblock.js
 	node test/query.js
+	node test/stripe.js
+
 
 test-utils:
 	node test/request.js
