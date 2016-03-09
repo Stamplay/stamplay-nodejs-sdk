@@ -64,10 +64,17 @@ This NodeJS SDK expose the following components:
 	* <code>downVote(id, [callback])</code>
 	* <code>rate(id, rate, [callback])</code>
 	* <code>comment(id, text, [callback])</code>
+	* <code>push(id, attribute, data, [callback])</code>
 * [Code Block](#codeblock)
 	* <code>run(data, queryParams, [callback])</code> 
 * [Webhook](#webhook)
 	* <code>post(data, [callback])</code> 
+* [Stripe](#stripe)
+	* <code>createSubscriptionuserId, planId, [callback])</code> 
+	* <code>deleteSubscription(userId, subscriptionId, options, [callback])</code> 
+	* <code>getSubscription(userId, subscriptionId, [callback])</code> 
+	* <code>getSubscriptions(userId, options, [callback])</code> 
+	* <code>updateSubscription(userId, subscriptionId, options, [callback])</code> 
 
 Also this components the sdk have some support objects to help you in common operation:
 
