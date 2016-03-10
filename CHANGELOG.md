@@ -1,5 +1,12 @@
 # Stamplay NODE SDK Changelog
 
+1.0.5 / 10-03-2015
+===================
+
+* Added push method on Object
+* Added Stripe component
+
+
 1.0.4 / 25-02-2015
 ===================
 
