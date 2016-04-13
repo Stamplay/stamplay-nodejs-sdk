@@ -54,6 +54,9 @@ This NodeJS SDK expose the following components:
   * <code>get(data, [callback])</code>
   * <code>remove(id, [callback])</code>
   * <code>update(id, data, [callback] )</code>
+  * <code>getRoles([callback] )</code>
+  * <code>getRole(roleId, [callback] )</code>
+  * <code>setRole(id, roleId, [callback] )</code>
 * [Object](#custom-object)
 	* <code>save(data, [callback])</code>
 	* <code>get(data, [callback])</code>
