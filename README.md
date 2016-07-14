@@ -46,10 +46,26 @@ stamplay.Object('foo').save(data, function(error, result){
 })
 ```
 
+Executing code with Code Block:
+```javascript
+var codeblock = new stamplay.Codeblock('codeBlockId');
+var data = { foo: 'bar' }; // request body
+
+var query = {
+  q1 : 1,
+  q2 : 'query parameter'
+};
+
+codeblock.run(data, query, function (err, res) {
+  if(err) return err;
+  // Handle Success
+})
+```
+
 ##Available components
 This NodeJS SDK expose the following components:
  
-* [User](#user)
+* [User](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-user)
 	* <code>save(data, [callback])</code>
   * <code>get(data, [callback])</code>
   * <code>remove(id, [callback])</code>
@@ -57,7 +73,7 @@ This NodeJS SDK expose the following components:
   * <code>getRoles([callback] )</code>
   * <code>getRole(roleId, [callback] )</code>
   * <code>setRole(id, roleId, [callback] )</code>
-* [Object](#custom-object)
+* [Object](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-code-objects)
 	* <code>save(data, [callback])</code>
 	* <code>get(data, [callback])</code>
 	* <code>remove(id, [callback])</code>
@@ -68,20 +84,17 @@ This NodeJS SDK expose the following components:
 	* <code>rate(id, rate, [callback])</code>
 	* <code>comment(id, text, [callback])</code>
 	* <code>push(id, attribute, data, [callback])</code>
-* [Code Block](#codeblock)
+* [Code Block](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-code-block)
 	* <code>run(data, queryParams, [callback])</code> 
-* [Webhook](#webhook)
+* [Webhook](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-webhook)
 	* <code>post(data, [callback])</code> 
-* [Stripe](#stripe)
+* [Stripe](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-stripe)
 	* <code>createSubscriptionuserId, planId, [callback])</code> 
 	* <code>deleteSubscription(userId, subscriptionId, options, [callback])</code> 
 	* <code>getSubscription(userId, subscriptionId, [callback])</code> 
 	* <code>getSubscriptions(userId, options, [callback])</code> 
 	* <code>updateSubscription(userId, subscriptionId, options, [callback])</code> 
-
-Also this components the sdk have some support objects to help you in common operation:
-
-* [Query](#query)
+* [Query](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-query)
 	* <code>greaterThan(attr, value)</code> 
 	* <code>greaterThanOrEqual(attr, value)</code> 
 	* <code>lessThan(attr, value)</code> 
