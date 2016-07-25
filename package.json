@@ -1,16 +1,16 @@
 {
   "name": "stamplay",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "homepage": "https://stamplay.com",
   "private": false,
   "description": "NodeJs SDK for Stamplay",
  	"scripts": {
     "test": "make test-all"
   },
-  "repository" : { 
+  "repository" : {
     "type" : "git",
     "url" : "https://github.com/Stamplay/stamplay-nodejs-sdk"
-  },  
+  },
   "author": "Stamplay <cristian.roselli@stamplay.com> (https://www.stamplay.com)",
   "license": "MIT",
    "keywords": [

@@ -1,9 +1,15 @@
 # Stamplay NODE SDK Changelog
 
+1.0.7 / 25-07-2016
+===================
+
+* Fix encoding query parameters
+* Added JSON parse on 200 response
+
 1.0.6 / 13-04-2016
 ===================
 
-* Added Role methods on User 
+* Added Role methods on User
 
 1.0.5 / 10-03-2016
 ===================

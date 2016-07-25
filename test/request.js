@@ -14,7 +14,7 @@ var options = {
 		"b":"b"
 	}
 }
-request.parseQueryParams(options)	
+request.parseQueryParams(options)
 assert.equal(options.path, "?a=a&b=b")
 
 var options = {
@@ -60,7 +60,7 @@ assert.equal(request.buildPath("path","","a"), "path/a")
 
 var auth = { appId:"a", apiKey:"b" }
 var data = { a:"a"}
-var opt = request.buildEndpoint( auth, "GET", "path", false)
+var opt = request.buildEndpoint( auth, "GET", "path/123", false)
 assert.equal(opt.hostname, "a.stamplayapp.com")
 assert.equal(opt.auth, "a:b")
 assert.equal(opt.method, "GET")
@@ -72,3 +72,16 @@ assert.equal(opt.auth, "a:b")
 assert.equal(opt.method, "POST")
 assert.equal(typeof opt.data, "object")
 assert.equal(opt.data.a, "a")
+
+var opt = request.buildEndpoint( auth, "POST", "?a= a&b= b", data)
+assert.equal(opt.hostname, "a.stamplayapp.com")
+assert.equal(opt.auth, "a:b")
+assert.equal(opt.method, "POST")
+assert.equal(typeof opt.data, "object")
+assert.equal(opt.path, "?a=%20a&b=%20b")
+
+
+var opt = request.buildEndpoint( auth, "GET", '?a= a&b= b&where={"$gte":{"ciao":4}}', null)
+assert.equal(opt.hostname, "a.stamplayapp.com")
+assert.equal(opt.auth, "a:b")
+assert.equal(opt.method, "GET")
