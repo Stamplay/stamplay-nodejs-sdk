@@ -1,10 +1,11 @@
 # Stamplay NODE SDK Changelog
 
-1.0.7 / 25-07-2016
+1.0.7 / 29-08-2016
 ===================
 
 * Fix encoding query parameters
 * Added JSON parse on 200 response
+* Added GET,PUT,PATCH and DELETE method to codeblock
 
 1.0.6 / 13-04-2016
 ===================

@@ -4,16 +4,16 @@
   "homepage": "https://stamplay.com",
   "private": false,
   "description": "NodeJs SDK for Stamplay",
- 	"scripts": {
+  "scripts": {
     "test": "make test-all"
   },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/Stamplay/stamplay-nodejs-sdk"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Stamplay/stamplay-nodejs-sdk"
   },
   "author": "Stamplay <cristian.roselli@stamplay.com> (https://www.stamplay.com)",
   "license": "MIT",
-   "keywords": [
+  "keywords": [
     "cloud",
     "baas",
     "api",

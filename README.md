@@ -18,7 +18,7 @@ This module is available for download on NPM:
 npm install stamplay
 ```
 
-To get started: 
+To get started:
 ```javascript
 var Stamplay = require('stamplay')
 var stamplay = new Stamplay('appId', 'apiKey')
@@ -64,7 +64,7 @@ codeblock.run(data, query, function (err, res) {
 
 ##Available components
 This NodeJS SDK expose the following components:
- 
+
 * [User](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-user)
 	* <code>save(data, [callback])</code>
   * <code>get(data, [callback])</code>
@@ -85,26 +85,30 @@ This NodeJS SDK expose the following components:
 	* <code>comment(id, text, [callback])</code>
 	* <code>push(id, attribute, data, [callback])</code>
 * [Code Block](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-code-block)
-	* <code>run(data, queryParams, [callback])</code> 
+	* <code>post(data, queryParams, [callback])</code>
+	* <code>put(data, queryParams, [callback])</code>
+	* <code>patch(data, queryParams, [callback])</code>
+	* <code>get(queryParams, [callback])</code>
+	* <code>delete(queryParams, [callback])</code>
 * [Webhook](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-webhook)
-	* <code>post(data, [callback])</code> 
+	* <code>post(data, [callback])</code>
 * [Stripe](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-stripe)
-	* <code>createSubscriptionuserId, planId, [callback])</code> 
-	* <code>deleteSubscription(userId, subscriptionId, options, [callback])</code> 
-	* <code>getSubscription(userId, subscriptionId, [callback])</code> 
-	* <code>getSubscriptions(userId, options, [callback])</code> 
-	* <code>updateSubscription(userId, subscriptionId, options, [callback])</code> 
+	* <code>createSubscriptionuserId, planId, [callback])</code>
+	* <code>deleteSubscription(userId, subscriptionId, options, [callback])</code>
+	* <code>getSubscription(userId, subscriptionId, [callback])</code>
+	* <code>getSubscriptions(userId, options, [callback])</code>
+	* <code>updateSubscription(userId, subscriptionId, options, [callback])</code>
 * [Query](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-query)
-	* <code>greaterThan(attr, value)</code> 
-	* <code>greaterThanOrEqual(attr, value)</code> 
-	* <code>lessThan(attr, value)</code> 
+	* <code>greaterThan(attr, value)</code>
+	* <code>greaterThanOrEqual(attr, value)</code>
+	* <code>lessThan(attr, value)</code>
 	* <code>lessThanOrEqual(attr, value)</code>
 	* <code>pagination(page, per_page)</code>
-	* <code>between(attr, value1, value2)</code> 
-	* <code>equalTo(attr, value)</code> 
-	* <code>exists(attr)</code> 
-	* <code>notExists(attr)</code> 
-	* <code>sortAscending(attr)</code> 
+	* <code>between(attr, value1, value2)</code>
+	* <code>equalTo(attr, value)</code>
+	* <code>exists(attr)</code>
+	* <code>notExists(attr)</code>
+	* <code>sortAscending(attr)</code>
 	* <code>sortDescending(attr)</code>
 	* <code>populate()</code>
 	* <code>populateOwner()</code>
@@ -114,9 +118,9 @@ This NodeJS SDK expose the following components:
 	* <code>nearSphere(type, coordinates, maxDistance, minDistance)</code>
 	* <code>geoIntersects(type, coordinates)</code>
 	* <code>geoWithinGeometry(type, coordinates)</code>
-	* <code>geoWithinCenterSphere(coordinates, radius)</code> 
-	* <code>or(query,..)</code> 
-	* <code>exec([callback])</code> 
+	* <code>geoWithinCenterSphere(coordinates, radius)</code>
+	* <code>or(query,..)</code>
+	* <code>exec([callback])</code>
 
 -------------------------------------------------------
 
@@ -132,4 +136,3 @@ This NodeJS SDK expose the following components:
 ## One more thing
 Go to [Stamplay](https://editor.stamplay.com/login) and try it now for free!.
 <img align="right" src="https://editor.stamplay.com/img/logo-robot-no-neck.png" height=60>
-
