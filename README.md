@@ -93,7 +93,8 @@ This NodeJS SDK expose the following components:
 * [Webhook](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-webhook)
 	* <code>post(data, [callback])</code>
 * [Stripe](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-stripe)
-	* <code>createSubscriptionuserId, planId, [callback])</code>
+	* <code>deleteCustomer(userId, [callback])</code>
+	* <code>createSubscription(userId, planId, [callback])</code>
 	* <code>deleteSubscription(userId, subscriptionId, options, [callback])</code>
 	* <code>getSubscription(userId, subscriptionId, [callback])</code>
 	* <code>getSubscriptions(userId, options, [callback])</code>
