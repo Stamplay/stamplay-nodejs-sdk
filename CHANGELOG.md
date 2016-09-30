@@ -1,5 +1,10 @@
 # Stamplay NODE SDK Changelog
 
+1.0.8 / 30-09-2016
+===================
+
+* Added Stripe.deleteCustomer method 
+
 1.0.7 / 29-08-2016
 ===================
 
