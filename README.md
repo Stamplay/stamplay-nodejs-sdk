@@ -136,4 +136,4 @@ This NodeJS SDK expose the following components:
 
 ## One more thing
 Go to [Stamplay](https://editor.stamplay.com/login) and try it now for free!.
-<img align="right" src="https://editor.stamplay.com/img/logo-robot-no-neck.png" height=60>
+<img align="right" src="https://editor.stamplay.com/img/stamplay-logo.png" height=60>
