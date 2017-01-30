@@ -1,4 +1,4 @@
-<img src="https://editor.stamplay.com/img/logo-robot-no-neck.png" align="left" width="170px" height="160px"/>
+<img src="https://editor.stamplay.com/img/stamplay-logo.png" align="left" width="170px" height="160px"/>
 <img align="left" width="0" height="160px" hspace="10"/>
 
 > #Stamplay NodeJS SDK
@@ -65,7 +65,7 @@ codeblock.run(data, query, function (err, res) {
 ##Available components
 This NodeJS SDK expose the following components:
 
-* [User](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-user)
+* [User](http://docs.stamplay.com/?lang=nodejs#users)
 	* <code>save(data, [callback])</code>
   * <code>get(data, [callback])</code>
   * <code>remove(id, [callback])</code>
@@ -73,7 +73,7 @@ This NodeJS SDK expose the following components:
   * <code>getRoles([callback] )</code>
   * <code>getRole(roleId, [callback] )</code>
   * <code>setRole(id, roleId, [callback] )</code>
-* [Object](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-code-objects)
+* [Object](http://docs.stamplay.com/?lang=nodejs#objects)
 	* <code>save(data, [callback])</code>
 	* <code>get(data, [callback])</code>
 	* <code>remove(id, [callback])</code>
@@ -84,22 +84,22 @@ This NodeJS SDK expose the following components:
 	* <code>rate(id, rate, [callback])</code>
 	* <code>comment(id, text, [callback])</code>
 	* <code>push(id, attribute, data, [callback])</code>
-* [Code Block](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-code-block)
+* [Code Block](http://docs.stamplay.com/?lang=nodejs#code-blocks)
 	* <code>post(data, queryParams, [callback])</code>
 	* <code>put(data, queryParams, [callback])</code>
 	* <code>patch(data, queryParams, [callback])</code>
 	* <code>get(queryParams, [callback])</code>
 	* <code>delete(queryParams, [callback])</code>
-* [Webhook](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-webhook)
+* [Webhook](http://docs.stamplay.com/?lang=nodejs#webhooks)
 	* <code>post(data, [callback])</code>
-* [Stripe](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-stripe)
+* [Stripe](http://docs.stamplay.com/?lang=nodejs#stripe)
 	* <code>deleteCustomer(userId, [callback])</code>
 	* <code>createSubscription(userId, planId, [callback])</code>
 	* <code>deleteSubscription(userId, subscriptionId, options, [callback])</code>
 	* <code>getSubscription(userId, subscriptionId, [callback])</code>
 	* <code>getSubscriptions(userId, options, [callback])</code>
 	* <code>updateSubscription(userId, subscriptionId, options, [callback])</code>
-* [Query](https://stamplay.com/docs/nodejs-sdk/reference#api-ref-query)
+* [Query](http://docs.stamplay.com/?lang=nodejs#advanced-queries)
 	* <code>greaterThan(attr, value)</code>
 	* <code>greaterThanOrEqual(attr, value)</code>
 	* <code>lessThan(attr, value)</code>
