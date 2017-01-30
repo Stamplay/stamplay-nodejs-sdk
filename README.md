@@ -135,5 +135,5 @@ This NodeJS SDK expose the following components:
 5. Create a new Pull Request
 
 ## One more thing
-Go to [Stamplay](https://editor.stamplay.com/login) and try it now for free!.
+Go to [Stamplay](https://editor.stamplay.com/login) and try it now for free!. 
 <img align="right" src="https://editor.stamplay.com/img/stamplay-logo.png" height=60>
