@@ -1,6 +1,6 @@
 {
   "name": "stamplay",
-  "version": "1.0.8",
+  "version": "2.0.0",
   "homepage": "https://stamplay.com",
   "private": false,
   "description": "NodeJs SDK for Stamplay",
